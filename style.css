@@ -1,3 +1,4 @@
+/* Reseta zoom no telemóvel */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,6 +8,15 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #f4f4f9;
+    user-select: none;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
 }
 
 .chatbot-container {
@@ -23,15 +33,15 @@ body {
 .chat-header {
     background-color: #007BFF;
     color: #fff;
-    padding: 10px 15px;
+    padding: 10px;
+    font-weight: bold;
     text-align: center;
-    font-size: 18px;
 }
 
 .chat-body {
-    flex: 1;
     padding: 15px;
     overflow-y: auto;
+    height: 300px;
 }
 
 .chat-message {
@@ -40,16 +50,7 @@ body {
     align-items: flex-start;
 }
 
-.chat-message.bot {
-    justify-content: flex-start;
-}
-
-.chat-message.user {
-    justify-content: flex-end;
-}
-
 .message-content {
-    max-width: 70%;
     padding: 10px;
     border-radius: 8px;
     font-size: 14px;
@@ -85,4 +86,27 @@ body {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+
+.chat-footer button:hover {
+    background-color: #0056b3;
+}
+
+#toggleTheme {
+    background-color: #ffc107;
+    font-weight: bold;
+}
+
+#toggleTheme:hover {
+    background-color: #ffb300;
+}
+
+.credit {
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+    color: #666;
+    background-color: #eaeaea;
+    font-size: 14px;
+    border-top: 1px solid #ccc;
 }
