@@ -9,7 +9,7 @@ function sendMessage() {
         userInput.value = '';
 
         setTimeout(() => {
-            botReply(message);
+            botReply();
         }, 500);
     }
 }
@@ -27,16 +27,7 @@ function appendMessage(sender, message) {
     chatBody.scrollTop = chatBody.scrollHeight;
 }
 
-function botReply(userMessage) {
-    let botMessage;
-
-    if (userMessage.toLowerCase().includes('olá')) {
-        botMessage = 'Olá! Como posso ajudar-te hoje?';
-    } else if (userMessage.toLowerCase().includes('horário')) {
-        botMessage = 'O nosso horário de funcionamento é das 9h às 18h, de segunda a sexta.';
-    } else {
-        botMessage = 'Desculpa, não entendi. Podes reformular a tua pergunta?';
-    }
-
+function botReply() {
+    const botMessage = 'Desculpa, ainda estou em desenvolvimento! 🤖🚧 Mas estou a aprender todos os dias para te ajudar melhor! 🛠️';
     appendMessage('bot', botMessage);
 }
