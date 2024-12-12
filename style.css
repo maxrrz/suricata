@@ -52,11 +52,14 @@ body.dark-mode {
 .message-content.user {
     background-color: #007BFF;
     color: #fff;
-    padding: 10px;
+    padding: 8px 12px; /* Ajusta o espaçamento interno do balão */
     border-radius: 12px;
     margin-left: auto; /* Faz com que o balão apareça à direita */
     max-width: 75%;
     text-align: right;
+    display: inline-block;
+    word-wrap: break-word;
+    line-height: 1.4;
 }
 
 /* Footer do chatbot */
