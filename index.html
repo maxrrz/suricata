@@ -2,21 +2,27 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot Apoio Manutenção AEMOV</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Chatbot Apoio Manutenção AEMov</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="chatbot-container">
-        <div class="chat-header">Chatbot Apoio Manutenção AEMOV</div>
+        <div class="chat-header">Chatbot Apoio Manutenção AEMov</div>
         <div class="chat-body" id="chatBody">
             <!-- Mensagens aparecerão aqui -->
         </div>
+
         <div class="chat-footer">
             <input type="text" id="userInput" placeholder="Escreve a tua mensagem..." />
             <button onclick="sendMessage()">Enviar</button>
+            <button id="toggleTheme" onclick="toggleTheme()">Modo Escuro/Claro</button>
         </div>
+
+        <!-- Mensagem desenvolvida por Max -->
+        <div class="credit">Desenvolvido por Max</div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
