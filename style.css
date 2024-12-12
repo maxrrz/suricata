@@ -59,6 +59,7 @@ body.dark-mode {
     text-align: right;
 }
 
+/* Footer do chatbot */
 .chat-footer {
     display: flex;
     padding: 10px;
@@ -116,6 +117,7 @@ body.dark-mode {
     border-top: 1px solid #ccc;
 }
 
+/* Tema Escuro */
 body.dark-mode .credit {
     color: #bbb;
     background-color: #1e1e1e;
