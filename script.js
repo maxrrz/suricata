@@ -1,3 +1,5 @@
+let isDarkMode = false;
+
 const chatBody = document.getElementById('chatBody');
 const userInput = document.getElementById('userInput');
 
@@ -32,9 +34,7 @@ function botReply() {
     appendMessage('bot', botMessage);
 }
 
-userInput.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter' && !event.shiftKey) {
-        event.preventDefault();  // Impede o envio do Enter sem Shift
-        sendMessage();
-    }
-});
+function toggleTheme() {
+    isDarkMode = !isDarkMode;
+    document.body.classList.toggle('dark-mode', isDarkMode);
+}
