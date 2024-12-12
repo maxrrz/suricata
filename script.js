@@ -37,4 +37,7 @@ function botReply() {
 function toggleTheme() {
     isDarkMode = !isDarkMode;
     document.body.classList.toggle('dark-mode', isDarkMode);
+
+    const toggleButton = document.getElementById('toggleTheme');
+    toggleButton.textContent = isDarkMode ? '☀️' : '🌙';
 }
