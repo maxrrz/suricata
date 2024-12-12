@@ -1,18 +1,10 @@
-/* Reseta zoom no telemóvel */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    user-select: none;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
 }
 
-/* Dark Mode */
 body.dark-mode {
     background-color: #121212;
     color: #ffffff;
@@ -24,25 +16,24 @@ body.dark-mode {
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
 }
 
-/* Header */
 .chat-header {
     background-color: #007BFF;
     color: #fff;
     padding: 10px;
-    font-weight: bold;
     text-align: center;
 }
 
-/* Chat Body */
+/* Ajuste para área das mensagens */
 .chat-body {
     padding: 15px;
-    overflow-y: auto;
     height: 300px;
+    max-height: 300px;
+    overflow-y: auto; /* Scroll automático */
+    border-bottom: 1px solid #ccc;
 }
 
 /* Mensagens */
@@ -68,7 +59,7 @@ body.dark-mode {
     color: #fff;
 }
 
-/* Chat Footer */
+/* Footer */
 .chat-footer {
     display: flex;
     padding: 10px;
@@ -83,41 +74,32 @@ body.dark-mode {
 }
 
 .chat-footer button {
-    margin-left: 10px;
-    padding: 10px;
     background-color: #007BFF;
     color: #fff;
+    padding: 10px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
-.chat-footer button:hover {
-    background-color: #0056b3;
-}
-
-/* Botão de Modo Escuro/Claro */
 #toggleTheme {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
     background-color: #000;
     color: #fff;
     font-weight: bold;
     font-size: 24px;
+    padding: 10px;
+    margin: 10px;
     border: none;
     border-radius: 50%;
     cursor: pointer;
     outline: none;
+    align-self: center;
 }
 
 #toggleTheme:hover {
     opacity: 0.8;
 }
 
-/* Crédito */
 .credit {
     text-align: center;
     padding: 15px;
