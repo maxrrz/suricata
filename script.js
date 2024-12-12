@@ -27,7 +27,7 @@ function sendMessage() {
         userInput.value = '';
         chatBody.scrollTop = chatBody.scrollHeight;
 
-        // Simula a resposta do chatbot após um pequeno delay
+        // Resposta automática do chatbot com um pequeno delay
         setTimeout(() => {
             sendBotReply(msgText);
         }, 1000);
@@ -40,7 +40,7 @@ function sendBotReply(userMsg) {
 
     const botMessage = document.createElement('div');
     botMessage.className = 'message-content bot';
-    botMessage.textContent = `🤖 Resposta: Estou aqui para te ajudar!`;
+    botMessage.textContent = `Desculpa, ainda estou em desenvolvimento! 🤖🚧 Mas estou a aprender todos os dias para te ajudar melhor! 🛠️`;
 
     setTimeout(() => {
         chatBody.appendChild(botMessage);
@@ -48,10 +48,16 @@ function sendBotReply(userMsg) {
     }, 1000);
 }
 
-// Adiciona o evento ao botão Enviar
-document.getElementById('sendBtn').addEventListener('click', sendMessage);
+// Mensagem inicial ao entrar no chat
+window.onload = function() {
+    const welcomeMessage = 'Olá! 👋 Este chatbot é uma ferramenta sem fins lucrativos destinada a verificar a disponibilidade das salas de aulas e os materiais presentes na escola de Montemor-o-Velho.';
+    appendMessage('bot', welcomeMessage);
+}
 
-// Adiciona o envio da mensagem ao pressionar Enter
-document.getElementById('userInput').addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') sendMessage();
+// Enviar mensagem pressionando Enter
+userInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        sendMessage();
+        e.preventDefault();  // Evitar que o Shift+Enter seja ignorado
+    }
 });
