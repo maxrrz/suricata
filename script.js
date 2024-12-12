@@ -53,6 +53,6 @@ window.onload = function() {
 userInput.addEventListener('keypress', function(e) {
     if (e.key === 'Enter') {
         sendMessage();
-        e.preventDefault();  // Evitar que o Shift+Enter seja ignorado
+        e.preventDefault();
     }
 });
