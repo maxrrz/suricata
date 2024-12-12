@@ -18,6 +18,9 @@ body.dark-mode {
     border-radius: 8px;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    margin: 20px auto;
+    padding: 15px;
 }
 
 .chat-header {
@@ -27,7 +30,6 @@ body.dark-mode {
     text-align: center;
 }
 
-/* Ajuste para área das mensagens */
 .chat-body {
     padding: 15px;
     height: 300px;
@@ -36,7 +38,6 @@ body.dark-mode {
     border-bottom: 1px solid #ccc;
 }
 
-/* Mensagens */
 .chat-message {
     margin-bottom: 10px;
     display: flex;
@@ -84,21 +85,19 @@ body.dark-mode {
 }
 
 #toggleTheme {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: #000;
     color: #fff;
     font-weight: bold;
     font-size: 24px;
     padding: 10px;
-    margin: 10px;
     border: none;
     border-radius: 50%;
     cursor: pointer;
     outline: none;
-    align-self: center;
-}
-
-#toggleTheme:hover {
-    opacity: 0.8;
 }
 
 .credit {
@@ -109,12 +108,4 @@ body.dark-mode {
     background-color: #eaeaea;
     font-size: 14px;
     border-top: 1px solid #ccc;
-}
-
-/* Container do botão do tema centralizado */
-.theme-toggle-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
 }
