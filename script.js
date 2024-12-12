@@ -26,6 +26,7 @@ function appendMessage(sender, message) {
 
     messageContainer.appendChild(messageContent);
     chatBody.appendChild(messageContainer);
+
     chatBody.scrollTop = chatBody.scrollHeight;
 }
 
@@ -40,4 +41,10 @@ function toggleTheme() {
 
     const toggleButton = document.getElementById('toggleTheme');
     toggleButton.textContent = isDarkMode ? '☀️' : '🌙';
+}
+
+// Mensagem de Boas-vindas ao entrar no chat
+window.onload = function() {
+    const welcomeMessage = 'Olá! 👋 Este chatbot é uma ferramenta sem fins lucrativos destinada a verificar a disponibilidade das salas de aulas e os materiais presentes na escola de Montemor-o-Velho.';
+    appendMessage('bot', welcomeMessage);
 }
