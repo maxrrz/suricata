@@ -1,7 +1,7 @@
 const chatBody = document.getElementById('chatBody');
+const userInput = document.getElementById('userInput');
 
 function sendMessage() {
-    const userInput = document.getElementById('userInput');
     const message = userInput.value.trim();
 
     if (message) {
@@ -31,3 +31,10 @@ function botReply() {
     const botMessage = 'Desculpa, ainda estou em desenvolvimento! 🤖🚧 Mas estou a aprender todos os dias para te ajudar melhor! 🛠️';
     appendMessage('bot', botMessage);
 }
+
+userInput.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter' && !event.shiftKey) {
+        event.preventDefault();  // Impede o envio do Enter sem Shift
+        sendMessage();
+    }
+});
