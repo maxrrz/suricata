@@ -32,7 +32,7 @@ body.dark-mode {
     padding: 15px;
     height: 300px;
     max-height: 300px;
-    overflow-y: auto; /* Scroll automático */
+    overflow-y: auto;
     border-bottom: 1px solid #ccc;
 }
 
@@ -49,11 +49,12 @@ body.dark-mode {
     font-size: 14px;
 }
 
-/* Respostas do Bot */
+/* Mensagens do Bot */
 .message-content.bot {
     background-color: #e9e9e9;
 }
 
+/* Mensagens do Utilizador */
 .message-content.user {
     background-color: #007BFF;
     color: #fff;
@@ -108,4 +109,12 @@ body.dark-mode {
     background-color: #eaeaea;
     font-size: 14px;
     border-top: 1px solid #ccc;
+}
+
+/* Container do botão do tema centralizado */
+.theme-toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
 }
