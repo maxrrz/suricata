@@ -5,22 +5,24 @@ body {
     padding: 0;
 }
 
+/* Modo Escuro */
 body.dark-mode {
     background-color: #121212;
     color: #ffffff;
 }
 
 .chatbot-container {
-    width: 400px;
-    max-width: 90%;
+    max-width: 500px;
+    width: 90%;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+    border-radius: 10px;
     margin: 20px auto;
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    overflow: hidden;
 }
 
 .chat-header {
@@ -28,14 +30,13 @@ body.dark-mode {
     color: #fff;
     padding: 10px;
     text-align: center;
+    font-weight: bold;
 }
 
 .chat-body {
+    height: 100%;
     padding: 15px;
-    height: 300px;
-    max-height: 300px;
     overflow-y: auto;
-    border-bottom: 1px solid #ccc;
 }
 
 /* Mensagens do Bot */
@@ -52,17 +53,14 @@ body.dark-mode {
 .message-content.user {
     background-color: #007BFF;
     color: #fff;
-    padding: 8px 12px; /* Ajusta o espaçamento interno do balão */
+    padding: 8px 12px;
     border-radius: 12px;
-    margin-left: auto; /* Faz com que o balão apareça à direita */
+    margin-left: auto;
     max-width: 75%;
-    text-align: right;
-    display: inline-block;
     word-wrap: break-word;
-    line-height: 1.4;
 }
 
-/* Footer do chatbot */
+/* Input e Botão */
 .chat-footer {
     display: flex;
     padding: 10px;
@@ -86,52 +84,33 @@ body.dark-mode {
 }
 
 .chat-footer button:hover {
-    opacity: 0.8;
-}
-
-#toggleTheme {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #000;
-    color: #fff;
-    font-weight: bold;
-    font-size: 24px;
-    padding: 15px;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    outline: none;
-    transition: 0.3s;
-}
-
-#toggleTheme:hover {
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .credit {
     text-align: center;
-    padding: 15px;
     font-weight: bold;
-    color: #666;
-    background-color: #eaeaea;
+    padding: 15px;
     font-size: 14px;
-    border-top: 1px solid #ccc;
+    background-color: #eaeaea;
 }
 
 /* Tema Escuro */
 body.dark-mode .credit {
-    color: #bbb;
     background-color: #1e1e1e;
+    color: #bbb;
 }
 
-body.dark-mode #toggleTheme {
-    background-color: #fff;
-    color: #000;
+body.dark-mode .chat-footer {
+    background-color: #333;
 }
 
-/* Scroll no chat */
+.chat-footer input {
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+/* Scroll suave no espaço do chat */
 .chat-body::-webkit-scrollbar {
     width: 8px;
 }
@@ -143,8 +122,4 @@ body.dark-mode #toggleTheme {
 .chat-body::-webkit-scrollbar-thumb {
     background: #888;
     border-radius: 10px;
-}
-
-.chat-body::-webkit-scrollbar-thumb:hover {
-    background: #555;
 }
