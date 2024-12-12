@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Chatbot Apoio Manutenção AEMov</title>
+    <title>Chatbot de Apoio à Manutenção Informática</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Botão para alternar Modo Escuro/Claro -->
+    <button id="toggleTheme" onclick="toggleTheme()">🌙</button>
+
     <div class="chatbot-container">
-        <div class="chat-header">Chatbot Apoio Manutenção AEMov</div>
+        <div class="chat-header">Chatbot de Apoio à Manutenção Informática</div>
+
         <div class="chat-body" id="chatBody">
             <!-- Mensagens aparecerão aqui -->
         </div>
@@ -16,10 +20,9 @@
         <div class="chat-footer">
             <input type="text" id="userInput" placeholder="Escreve a tua mensagem..." />
             <button onclick="sendMessage()">Enviar</button>
-            <button id="toggleTheme" onclick="toggleTheme()">Modo Escuro/Claro</button>
         </div>
 
-        <!-- Mensagem desenvolvida por Max -->
+        <!-- Mensagem de Crédito -->
         <div class="credit">Desenvolvido por Max</div>
     </div>
 
