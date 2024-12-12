@@ -7,25 +7,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Botão para alternar Modo Escuro/Claro -->
-    <button id="toggleTheme" onclick="toggleTheme()">🌙</button>
 
-    <div class="chatbot-container">
-        <div class="chat-header">Chatbot de Apoio à Manutenção Informática</div>
+<div class="chatbot-container">
+    <div class="chat-header">Chatbot de Apoio à Manutenção Informática</div>
 
-        <div class="chat-body" id="chatBody">
-            <!-- Mensagens aparecerão aqui -->
-        </div>
-
-        <div class="chat-footer">
-            <input type="text" id="userInput" placeholder="Escreve a tua mensagem..." />
-            <button onclick="sendMessage()">Enviar</button>
-        </div>
-
-        <!-- Mensagem de Crédito -->
-        <div class="credit">Desenvolvido por Max</div>
+    <div class="chat-body" id="chatBody">
+        <!-- Mensagens aparecerão aqui -->
     </div>
 
-    <script src="script.js"></script>
+    <div class="chat-footer">
+        <input type="text" id="userInput" placeholder="Escreve a tua mensagem..." />
+        <button onclick="sendMessage()">Enviar</button>
+    </div>
+
+    <!-- Botão Modo Escuro/Claro centralizado -->
+    <div class="theme-toggle-container">
+        <button id="toggleTheme" onclick="toggleTheme()">🌙</button>
+    </div>
+
+    <div class="credit">Desenvolvido por Max</div>
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
