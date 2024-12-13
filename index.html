@@ -2,31 +2,27 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Chatbot de Apoio à Manutenção Informática</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="chatbot-container">
-    <div class="chat-header">Chatbot de Apoio à Manutenção Informática</div>
+    <div class="chatbot-container">
+        <div class="chat-header">Chatbot de Apoio à Manutenção Informática</div>
+        <div id="chatBody" class="chat-body"></div>
 
-    <div class="chat-body" id="chatBody">
-        <!-- Mensagens aparecerão aqui -->
+        <div class="chat-footer">
+            <input id="userInput" type="text" placeholder="Escreve a tua mensagem..." />
+            <button onclick="sendMessage()">Enviar</button>
+        </div>
+
+        <div class="credit">Desenvolvido por Max</div>
     </div>
 
-    <div class="chat-footer">
-        <input type="text" id="userInput" placeholder="Escreve a tua mensagem..." />
-        <button onclick="sendMessage()">Enviar</button>
-    </div>
+    <!-- Botão para Alternar Tema -->
+    <button id="toggleTheme">🌙</button>
 
-    <div class="credit">Desenvolvido por Max</div>
-</div>
-
-<!-- Botão de alternar entre modo claro e escuro localizado fora do retângulo -->
-<button id="toggleTheme" onclick="toggleTheme()">🌙</button>
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
