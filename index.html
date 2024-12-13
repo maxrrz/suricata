@@ -8,26 +8,25 @@
 </head>
 <body>
 
-    <div class="chatbot-container">
-        <div class="chat-header">Chatbot de Apoio à Manutenção Informática</div>
+<div class="chatbot-container">
+    <div class="chat-header">Chatbot de Apoio à Manutenção Informática</div>
 
-        <div class="chat-body" id="chatBody">
-            <!-- Mensagens aparecerão aqui -->
-        </div>
-
-        <div class="chat-footer">
-            <input type="text" id="userInput" placeholder="Escreve a tua mensagem..." />
-            <button onclick="sendMessage()">Enviar</button>
-        </div>
-
-        <div class="credit">Desenvolvido por Max</div>
+    <div class="chat-body" id="chatBody">
+        <!-- Mensagens aparecerão aqui -->
     </div>
 
-    <!-- Botão de alternar entre o modo claro/escuro -->
-    <button id="toggleTheme" onclick="toggleTheme()">🌙</button>
+    <div class="chat-footer">
+        <input type="text" id="userInput" placeholder="Escreve a tua mensagem..." />
+        <button onclick="sendMessage()">Enviar</button>
+    </div>
 
-</body>
+    <div class="credit">Desenvolvido por Max</div>
+</div>
+
+<!-- Botão de alternar entre modo claro e escuro localizado fora do retângulo -->
+<button id="toggleTheme" onclick="toggleTheme()">🌙</button>
 
 <script src="script.js"></script>
 
+</body>
 </html>
