@@ -1,88 +1,58 @@
-let lastMessageTime = 0;  
-const spamInterval = 3000;  
+let isDarkMode = false;
 
-// Função para alternar entre Modo Claro e Modo Escuro
-function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
+const chatBody = document.getElementById('chatBody');
+const userInput = document.getElementById('userInput');
 
-    // Alteração do texto e ícone do botão
-    const themeBtn = document.getElementById('themeBtn');
-    if (document.body.classList.contains('dark-mode')) {
-        themeBtn.textContent = '☀️ Modo Claro';
-    } else {
-        themeBtn.textContent = '🌙 Modo Escuro';
-    }
-}
-
-// Função para enviar mensagens
 function sendMessage() {
-    const userInput = document.getElementById('userInput');
-    const chatBody = document.getElementById('chatBody');
-    const msgText = userInput.value.trim();
+    const message = userInput.value.trim();
 
-    const currentTime = Date.now();
-
-    if (currentTime - lastMessageTime < spamInterval) {
-        alert('Por favor, aguarde um pouco antes de enviar outra mensagem. ⏳');
-        return;
-    }
-
-    if (msgText) {
-        lastMessageTime = currentTime;
-
-        const userMessage = document.createElement('div');
-        userMessage.className = 'message-content user';
-        userMessage.textContent = msgText;
-        chatBody.appendChild(userMessage);
-
+    if (message) {
+        appendMessage('user', message);
         userInput.value = '';
-        chatBody.scrollTop = chatBody.scrollHeight;
 
         setTimeout(() => {
-            sendBotReply(msgText);
-        }, 1000);
+            botReply();
+        }, 500);
     }
 }
 
-// Função para responder ao utilizador
-function sendBotReply(userMsg) {
-    const chatBody = document.getElementById('chatBody');
+function appendMessage(sender, message) {
+    const messageContainer = document.createElement('div');
+    messageContainer.classList.add('chat-message', sender);
 
-    const botMessage = document.createElement('div');
-    botMessage.className = 'message-content bot';
-    botMessage.textContent = `🤖 Desculpa, ainda estou em desenvolvimento! 🤖🚧 Mas estou a aprender todos os dias para te ajudar melhor! 🛠️`;
+    const messageContent = document.createElement('div');
+    messageContent.classList.add('message-content', sender);
+    messageContent.textContent = message;
 
-    setTimeout(() => {
-        chatBody.appendChild(botMessage);
-        chatBody.scrollTop = chatBody.scrollHeight;
-    }, 1000);
-}
+    messageContainer.appendChild(messageContent);
+    chatBody.appendChild(messageContainer);
 
-// Adiciona o evento ao botão Enviar
-document.getElementById('sendBtn').addEventListener('click', sendMessage);
-
-// Adiciona o envio das mensagens ao pressionar Enter
-document.getElementById('userInput').addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-        e.preventDefault();
-        sendMessage();
-    }
-});
-
-// Alterna entre os temas claro/escuro
-document.getElementById('themeBtn').addEventListener('click', toggleDarkMode);
-
-// Mensagem inicial ao entrar no chatbot
-function showIntroMessage() {
-    const chatBody = document.getElementById('chatBody');
-
-    const introMsg = document.createElement('div');
-    introMsg.className = 'message-content bot';
-    introMsg.textContent = `Olá! 👋 Este chatbot é uma ferramenta sem fins lucrativos destinada a verificar a disponibilidade das salas de aulas e os materiais presentes na escola de Montemor-o-Velho.`;
-
-    chatBody.appendChild(introMsg);
     chatBody.scrollTop = chatBody.scrollHeight;
 }
 
-// Chama a mensagem inicial ao carregar a página
-window.onload = showIntroMessage;
+function botReply() {
+    const botMessage = 'Desculpa, ainda estou em desenvolvimento! 🤖🚧 Mas estou a aprender todos os dias para te ajudar melhor! 🛠️';
+    appendMessage('bot', botMessage);
+}
+
+function toggleTheme() {
+    isDarkMode = !isDarkMode;
+    document.body.classList.toggle('dark-mode', isDarkMode);
+
+    const toggleButton = document.getElementById('toggleTheme');
+    toggleButton.textContent = isDarkMode ? '☀️' : '🌙';
+}
+
+// Mensagem inicial ao entrar no chat
+window.onload = function() {
+    const welcomeMessage = 'Olá! 👋 Este chatbot é uma ferramenta sem fins lucrativos destinada a verificar a disponibilidade das salas de aulas e os materiais presentes na escola de Montemor-o-Velho.';
+    appendMessage('bot', welcomeMessage);
+}
+
+// Enviar mensagem pressionando Enter
+userInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        sendMessage();
+        e.preventDefault();  // Evitar que o Shift+Enter seja ignorado
+    }
+});
