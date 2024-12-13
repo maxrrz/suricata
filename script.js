@@ -4,6 +4,14 @@ const spamInterval = 3000;
 // Função para alternar entre Modo Claro e Modo Escuro
 function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
+
+    // Alteração do texto e ícone do botão
+    const themeBtn = document.getElementById('themeBtn');
+    if (document.body.classList.contains('dark-mode')) {
+        themeBtn.textContent = '☀️ Modo Claro';
+    } else {
+        themeBtn.textContent = '🌙 Modo Escuro';
+    }
 }
 
 // Função para enviar mensagens
@@ -55,13 +63,16 @@ document.getElementById('sendBtn').addEventListener('click', sendMessage);
 
 // Adiciona o envio das mensagens ao pressionar Enter
 document.getElementById('userInput').addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') sendMessage();
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        sendMessage();
+    }
 });
 
 // Alterna entre os temas claro/escuro
 document.getElementById('themeBtn').addEventListener('click', toggleDarkMode);
 
-// Mensagem de introdução ao entrar no chatbot
+// Mensagem inicial ao entrar no chatbot
 function showIntroMessage() {
     const chatBody = document.getElementById('chatBody');
 
@@ -73,5 +84,5 @@ function showIntroMessage() {
     chatBody.scrollTop = chatBody.scrollHeight;
 }
 
-// Chama a mensagem de introdução ao carregar a página
+// Chama a mensagem inicial ao carregar a página
 window.onload = showIntroMessage;
