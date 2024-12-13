@@ -1,5 +1,10 @@
-let lastMessageTime = 0;  // Variável para armazenar o timestamp da última mensagem enviada
-const spamInterval = 3000;  // 3 segundos entre mensagens
+let lastMessageTime = 0;  
+const spamInterval = 3000;  
+
+// Função para alternar entre Modo Claro e Modo Escuro
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+}
 
 // Função para enviar mensagens
 function sendMessage() {
@@ -9,7 +14,6 @@ function sendMessage() {
 
     const currentTime = Date.now();
 
-    // Verifica se o utilizador tenta enviar mensagens em intervalos muito rápidos
     if (currentTime - lastMessageTime < spamInterval) {
         alert('Por favor, aguarde um pouco antes de enviar outra mensagem. ⏳');
         return;
@@ -18,7 +22,6 @@ function sendMessage() {
     if (msgText) {
         lastMessageTime = currentTime;
 
-        // Cria a mensagem do utilizador e adiciona ao chat
         const userMessage = document.createElement('div');
         userMessage.className = 'message-content user';
         userMessage.textContent = msgText;
@@ -27,7 +30,6 @@ function sendMessage() {
         userInput.value = '';
         chatBody.scrollTop = chatBody.scrollHeight;
 
-        // Resposta automática do chatbot com um pequeno delay
         setTimeout(() => {
             sendBotReply(msgText);
         }, 1000);
@@ -40,7 +42,7 @@ function sendBotReply(userMsg) {
 
     const botMessage = document.createElement('div');
     botMessage.className = 'message-content bot';
-    botMessage.textContent = `Desculpa, ainda estou em desenvolvimento! 🤖🚧 Mas estou a aprender todos os dias para te ajudar melhor! 🛠️`;
+    botMessage.textContent = `🤖 Desculpa, ainda estou em desenvolvimento! 🤖🚧 Mas estou a aprender todos os dias para te ajudar melhor! 🛠️`;
 
     setTimeout(() => {
         chatBody.appendChild(botMessage);
@@ -48,16 +50,28 @@ function sendBotReply(userMsg) {
     }, 1000);
 }
 
-// Mensagem inicial ao entrar no chat
-window.onload = function() {
-    const welcomeMessage = 'Olá! 👋 Este chatbot é uma ferramenta sem fins lucrativos destinada a verificar a disponibilidade das salas de aulas e os materiais presentes na escola de Montemor-o-Velho.';
-    appendMessage('bot', welcomeMessage);
+// Adiciona o evento ao botão Enviar
+document.getElementById('sendBtn').addEventListener('click', sendMessage);
+
+// Adiciona o envio das mensagens ao pressionar Enter
+document.getElementById('userInput').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') sendMessage();
+});
+
+// Alterna entre os temas claro/escuro
+document.getElementById('themeBtn').addEventListener('click', toggleDarkMode);
+
+// Mensagem de introdução ao entrar no chatbot
+function showIntroMessage() {
+    const chatBody = document.getElementById('chatBody');
+
+    const introMsg = document.createElement('div');
+    introMsg.className = 'message-content bot';
+    introMsg.textContent = `Olá! 👋 Este chatbot é uma ferramenta sem fins lucrativos destinada a verificar a disponibilidade das salas de aulas e os materiais presentes na escola de Montemor-o-Velho.`;
+
+    chatBody.appendChild(introMsg);
+    chatBody.scrollTop = chatBody.scrollHeight;
 }
 
-// Enviar mensagem pressionando Enter
-userInput.addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-        sendMessage();
-        e.preventDefault();  // Evitar que o Shift+Enter seja ignorado
-    }
-});
+// Chama a mensagem de introdução ao carregar a página
+window.onload = showIntroMessage;
