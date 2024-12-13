@@ -40,19 +40,19 @@ function toggleTheme() {
     document.body.classList.toggle('dark-mode', isDarkMode);
 
     const toggleButton = document.getElementById('toggleTheme');
-    toggleButton.textContent = isDarkMode ? '☀️' : '🌙';
+    toggleButton.textContent = isDarkMode ? '☀️ Modo Claro' : '🌙 Modo Escuro';
 }
 
-// Mensagem inicial ao entrar no chat
+// Mensagem inicial ao entrar no chatbot
 window.onload = function() {
-    const welcomeMessage = 'Olá! 👋 Este chatbot é uma ferramenta sem fins lucrativos destinada a verificar a disponibilidade das salas de aulas e os materiais presentes na escola de Montemor-o-Velho.';
+    const welcomeMessage = '🤖 Desculpa, ainda estou em desenvolvimento! 🤖🚧 Mas estou a aprender todos os dias para te ajudar melhor! 🛠️';
     appendMessage('bot', welcomeMessage);
 }
 
-// Enviar mensagem pressionando Enter
+// Enviar mensagem ao pressionar Enter
 userInput.addEventListener('keypress', function(e) {
     if (e.key === 'Enter') {
         sendMessage();
-        e.preventDefault();  // Evitar que o Shift+Enter seja ignorado
+        e.preventDefault();
     }
 });
