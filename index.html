@@ -2,26 +2,27 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Chatbot de Apoio à Manutenção Informática</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas Partilháveis</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1>Minhas Notas</h1>
 
-    <div class="chatbot-container">
-        <div class="chat-header">Chatbot de Apoio à Manutenção Informática</div>
-        <div id="chatBody" class="chat-body"></div>
+    <input type="text" id="nomeNota" placeholder="Nome da Nota" />
+    <textarea id="nota" placeholder="Escreve a tua nota aqui..."></textarea>
+    <button id="guardar">Guardar Nota</button>
+    <button id="gerarLink">Gerar Link da Nota</button>
 
-        <div class="chat-footer">
-            <input id="userInput" type="text" placeholder="Escreve a tua mensagem..." />
-            <button onclick="sendMessage()">Enviar</button>
-        </div>
-
-        <div class="credit">Desenvolvido por Max</div>
+    <div id="notas">
+        <h2>Notas Guardadas:</h2>
+        <ul id="listaNotas"></ul>
     </div>
 
-    <!-- Botão para Alternar Tema -->
-    <button id="toggleTheme">🌙</button>
+    <div id="linkGerado" style="display:none;">
+        <h2>Link para Partilhar:</h2>
+        <p><a id="urlLink" href="#" target="_blank">Clique aqui para aceder à nota</a></p>
+    </div>
 
     <script src="script.js"></script>
 </body>
