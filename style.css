@@ -1,121 +1,37 @@
-/* Geral */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
     margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
+    padding: 20px;
+    background-color: #f4f4f4;
 }
 
-/* Modo Escuro */
-body.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
-}
-
-/* Container do Chatbot */
-.chatbot-container {
-    max-width: 400px;
-    width: 90%;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    height: 80vh;
-    max-height: 500px;
-}
-
-/* Header do Chat */
-.chat-header {
-    background-color: #007BFF;
-    color: #fff;
+textarea {
+    width: 100%;
+    height: 100px;
     padding: 10px;
-    text-align: center;
-}
-
-/* Corpo das Mensagens */
-.chat-body {
-    padding: 15px;
-    height: 100%;
-    max-height: 400px;
-    overflow-y: auto;
-    border-bottom: 1px solid #ccc;
-}
-
-/* Mensagem do Bot */
-.message-content.bot {
-    background-color: #e9e9e9;
-    padding: 10px;
-    border-radius: 8px;
-}
-
-/* Mensagem do Utilizador */
-.message-content.user {
-    background-color: #007BFF;
-    color: #fff;
-    padding: 10px;
-    border-radius: 8px;
-}
-
-/* Footer do Chat */
-.chat-footer {
-    display: flex;
-    padding: 10px;
-    background-color: #f1f1f1;
-}
-
-/* Input e Botão Enviar */
-.chat-footer input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-/* Botão Enviar */
-.chat-footer button {
-    background-color: #007BFF;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* Botão Alternar Tema (fora do Chatbot) */
-#toggleTheme {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #ffeb3b;
-    color: #000;
-    font-weight: bold;
-    font-size: 20px;
-    padding: 15px;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-/* Mensagem "Desenvolvido por Max" */
-.credit {
-    text-align: center;
-    padding: 15px;
-    font-weight: bold;
-    background-color: #eaeaea;
     font-size: 14px;
-    border-top: 1px solid #ccc;
 }
 
-/* Modo Escuro - Créditos */
-body.dark-mode .credit {
-    background-color: #1e1e1e;
-    color: #bbb;
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#notas {
+    margin-top: 20px;
+}
+
+#listaNotas {
+    list-style-type: none;
+    padding: 0;
+}
+
+#listaNotas li {
+    background-color: #fff;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
